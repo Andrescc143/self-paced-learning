@@ -5,7 +5,7 @@ from datetime import datetime
 
 
 def index(request):
-    return HttpResponse('Welcome to the main webpage for this application')
+    return render(request, "website/index.html")
 
 
 def about(request):
