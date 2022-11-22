@@ -5,7 +5,7 @@ from datetime import datetime
 
 
 def index(request):
-    return render(request, "website/index.html")
+    return render(request, "website/index.html", context={'message': 'This a simple message to fill up as a template variable.'})
 
 
 def about(request):
