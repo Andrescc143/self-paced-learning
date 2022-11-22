@@ -1,10 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from .models import Meeting
 
 
 def get_meeting(pk):
-    return Meeting.objects.get(pk=pk)
+    return get_object_or_404(Meeting, pk=pk)
 
 
 def detail(request, pk):
