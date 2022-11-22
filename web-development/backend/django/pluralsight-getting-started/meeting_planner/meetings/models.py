@@ -9,7 +9,7 @@ class Room(models.Model):
     room_number = models.IntegerField()
     
     def __str__(self):
-        return f"The room {self.name} with room number {self.room_number} at the {self.floor_number} floor. "
+        return f"The room {self.name} with room number {self.room_number} at the {self.floor} floor. "
     
     
 class Meeting(models.Model):
