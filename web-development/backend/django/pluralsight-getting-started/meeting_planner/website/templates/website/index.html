@@ -34,7 +34,7 @@
                     <td>{{ meeting.room.name }}</td>
                     <td>{{ meeting.start_time }}</td>
                     <td>
-                        <a href="/meetings/{{ meeting.id }}">Clic here</a>
+                        <a href="{% url 'detail' meeting.id %}">Clic here</a>
                     </td>
                 {% endfor %}
             </tr>
