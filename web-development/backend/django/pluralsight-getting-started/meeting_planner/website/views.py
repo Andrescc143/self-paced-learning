@@ -7,8 +7,8 @@ from meetings.models import Meeting
 
 
 def index(request):
-    num_meeting = Meeting.objects.count()
-    return render(request, "website/index.html", context={'num_meeting': num_meeting})
+    meetings = Meeting.objects.all()
+    return render(request, "website/index.html", context={'meetings': meetings})
 
 
 def about(request):

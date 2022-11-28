@@ -6,8 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
 </head>
+<style>
+    table{
+        width: 40%
+    }
+    th {
+        width: 180px,
+        text-align: center
+    }
+    td {
+        text-align: center
+    }
+</style>
 <body>
     <h1>Welcome to the greatest Meeting planner</h1>
-    <p>Currently, there are {{ num_meetings }} in the database</p>
+    <p>
+        <table>
+            <tr>
+                <th>Meeting</th>
+                <th>Room</th>
+                <th>Time</th>
+                <th>Detail</th>
+            </tr>
+            <tr>
+                {% for meeting in meetings %}
+                    <td>{{ meeting.title }}</td>
+                    <td>{{ meeting.room.name }}</td>
+                    <td>{{ meeting.start_time }}</td>
+                    <td>
+                        <a href="/meetings/{{ meeting.id }}">Clic here</a>
+                    </td>
+                {% endfor %}
+            </tr>
+        </table>
+    </p>
 </body>
 </html>
