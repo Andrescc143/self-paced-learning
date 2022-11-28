@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Rooms</title>
 </head>
 <style>
     table{
@@ -19,24 +19,20 @@
     }
 </style>
 <body>
-    <a href="{% url 'rooms' %}">Rooms</a>
-    <h1>Welcome to the greatest Meeting planner</h1>
+    <a href="{% url 'index' %}">Home</a>
+    <h1>Existing rooms</h1>
     <p>
         <table>
             <tr>
-                <th>Meeting</th>
                 <th>Room</th>
-                <th>Time</th>
-                <th>Detail</th>
+                <th>Floor</th>
+                <th>Number</th>
             </tr>
             <tr>
-                {% for meeting in meetings %}
-                    <td>{{ meeting.title }}</td>
-                    <td>{{ meeting.room.name }}</td>
-                    <td>{{ meeting.start_time }}</td>
-                    <td>
-                        <a href="{% url 'detail' meeting.id %}">Clic here</a>
-                    </td>
+                {% for room in rooms %}
+                    <td>{{ room.name }}</td>
+                    <td>{{ room.floor }}</td>
+                    <td>{{ room.room_number }}</td>
                 {% endfor %}
             </tr>
         </table>
