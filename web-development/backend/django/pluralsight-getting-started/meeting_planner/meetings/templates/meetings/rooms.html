@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rooms</title>
-</head>
-<style>
-    table{
-        width: 40%
-    }
-    th {
-        width: 180px,
-        text-align: center
-    }
-    td {
-        text-align: center
-    }
-</style>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}
+    Rooms
+{% endblock %}
+
+{% block content %}
     <a href="{% url 'index' %}">Home</a>
     <h1>Existing rooms</h1>
     <p>
@@ -37,5 +23,4 @@
             </tr>
         </table>
     </p>
-</body>
-</html>
+{% endblock %}
