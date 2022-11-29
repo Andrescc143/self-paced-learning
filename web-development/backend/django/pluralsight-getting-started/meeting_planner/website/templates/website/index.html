@@ -1,26 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'website/style.css' %}">
     <title>Welcome</title>
 </head>
-<style>
-    table{
-        width: 40%
-    }
-    th {
-        width: 180px,
-        text-align: center
-    }
-    td {
-        text-align: center
-    }
-</style>
 <body>
     <a href="{% url 'rooms' %}">Rooms</a>
     <h1>Welcome to the greatest Meeting planner</h1>
+    <img src="{% static 'website/calendar.png' %}" alt="calendar image" width="150px">
     <p>
         <table>
             <tr>

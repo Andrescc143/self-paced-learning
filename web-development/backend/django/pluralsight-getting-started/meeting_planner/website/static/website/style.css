@@ -1,0 +1,14 @@
+body {
+    font-family: sans-serif;
+    background-color: floralwhite;
+}
+table{
+    width: 40%;
+}
+th {
+    width: 180px;
+    text-align: center;
+}
+td {
+    text-align: center;
+}
