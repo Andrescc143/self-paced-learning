@@ -8,6 +8,19 @@
 </head>
 <body>
     <h1>Welcome to this page</h1>
+    <p>
+        {% if messages %}
+            <ul>
+                {% for msg in messages %}
+                    <li>
+                        <div class="alert alert-{{ msg.level_tag }}" role="alert"> 
+                            {{ msg.message }}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </p>
     {% if request.COOKIES.visits %}
         <p>Hey {{ request.session.customer }}!, You have seen this page {{ request.COOKIES.visits }}</p>
     {% else %}

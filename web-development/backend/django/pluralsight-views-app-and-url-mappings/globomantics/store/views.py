@@ -4,6 +4,7 @@ from django.http import HttpResponse
 
 from django.shortcuts import render
 from django.views.decorators.cache import cache_page
+from django.contrib import messages
 
 
 @cache_page(900)
@@ -12,6 +13,7 @@ def index(request):
     if not request.session.has_key('customer'):
         request.session['customer'] = user_name
         print('Session value set')
+        messages.info(request, 'The user was succesfully fetched.')
     response = render(request, 'store/index.html')
     if request.COOKIES.get('visits'):
         value = int(request.COOKIES.get('visits'))
