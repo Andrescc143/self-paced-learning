@@ -9,9 +9,9 @@
 <body>
     <h1>Welcome to this page</h1>
     {% if request.COOKIES.visits %}
-        <p>You have seen this page {{ request.COOKIES.visits }}</p>
+        <p>Hey {{ request.session.customer }}!, You have seen this page {{ request.COOKIES.visits }}</p>
     {% else %}
-        <p>Hey, I noticed this is the first time you see this page</p>
+        <p>Hey! I noticed this is the first time you see this page</p>
     {% endif %}
 </body>
 </html>

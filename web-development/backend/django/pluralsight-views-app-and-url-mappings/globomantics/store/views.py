@@ -1,12 +1,17 @@
 from django.core.paginator import Paginator
 from django.views import View
-
-from django.shortcuts import render
-
 from django.http import HttpResponse
 
+from django.shortcuts import render
+from django.views.decorators.cache import cache_page
 
+
+@cache_page(900)
 def index(request):
+    user_name = 'Andres'
+    if not request.session.has_key('customer'):
+        request.session['customer'] = user_name
+        print('Session value set')
     response = render(request, 'store/index.html')
     if request.COOKIES.get('visits'):
         value = int(request.COOKIES.get('visits'))
@@ -16,6 +21,14 @@ def index(request):
         response.set_cookie('visits', 1)
     return response
     
+
+def logout(request):
+    try:
+        del request.session['customer']
+    except KeyError:
+        print("Error while logging out")
+    return HttpResponse("You're logged out.")
+
 
 def detail(request):
     return HttpResponse('This is the detail webpage.')
