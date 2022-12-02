@@ -20,6 +20,7 @@
                 {% endfor %}
             </ul>
         {% endif %}
+        <h1> {% trans "Welcome to the website" %}</h1>
     </p>
     {% if request.COOKIES.visits %}
         <p>Hey {{ request.session.customer }}!, You have seen this page {{ request.COOKIES.visits }}</p>
