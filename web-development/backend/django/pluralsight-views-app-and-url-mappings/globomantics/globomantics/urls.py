@@ -20,6 +20,7 @@ import debug_toolbar
 
 urlpatterns = [
     path('__debug__/', include(debug_toolbar.urls)),
+    path('pages/', include('django.contrib.flatpages.urls')),
     path('admin/', admin.site.urls),
     path('store/', include('store.urls'))
 ]
