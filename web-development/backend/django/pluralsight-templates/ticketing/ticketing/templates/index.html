@@ -8,5 +8,22 @@
 </head>
 <body>
     <h1>Welcome to the first webpage of this thing</h1>
+    <p>
+        These are the current views created:
+        <table>
+            <tr>
+                <th>View</th>
+                <th>Link</th>
+            </tr>
+            <tr>
+                <td>Submit</td>
+                <td><a href="{% url 'submit' %}">Link</a></td>
+            </tr>
+            <tr>
+                <td>Tickets</td>
+                <td><a href="{% url 'tickets' %}">Link</a></td>
+            </tr>
+        </table>
+    </p>
 </body>
 </html>
