@@ -11,5 +11,19 @@
     <p>
         This is the section to see all the tickets created.
     </p>
+    <table>
+        <tr>
+            <th>Created at</th>
+            <th>Submitter</th>
+            <th>Body</th>
+        </tr>
+        {% for ticket in tickets %}
+            <tr>
+                <td>{{ ticket.created_at }}</td>
+                <td>{{ ticket.submitter }}</td>
+                <td>{{ ticket.body }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
