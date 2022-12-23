@@ -9,9 +9,12 @@ def index(request):
 
 
 def submit(request):
-    ticket = Ticket(submitter='Test_user', body="This is a ticket to use as an example.")
-    ticket.save()
-    print("Ticket saved correctly")
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        body = request.POST.get('body')
+        ticket = Ticket(submitter=username, body=body)
+        ticket.save()
+        return HttpResponse("The ticket has been saved succesfully!")
     return render(request, 'submit.html')
 
 

@@ -8,8 +8,13 @@
 </head>
 <body>
     <h1>Submit</h1>
-    <p>
-        This is the section to submit a ticket.
-    </p>
+    <form action="/submit/" method='POST'>
+        {% csrf_token %}
+        <input type="text" name='username' placeholder='Username'>
+        <br>
+        <textarea placeholder="Body" name="body"></textarea>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
