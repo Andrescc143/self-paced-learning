@@ -1,0 +1,129 @@
+<h1>Form</h1>
+<form (ngSubmit)="onRegister()" #myForm="ngForm">
+  <div class="input-group">
+    <label for="">Username</label>
+    <input required type="text" id="username" name="username" [(ngModel)]="register.username">
+    <p>Error messages</p>
+  </div>
+  <div>
+    <label for="">Email</label>
+    <input required type="email" id="email" name="email" [(ngModel)]="register.email">
+    <p>Error messages</p>
+  </div>
+  <div>
+    <label for="">Password</label>
+    <input required type="password" id="password" name="password" [(ngModel)]="register.password">
+    <p>Error messages</p>
+  </div>
+  <button [disabled]="myForm.invalid" type="submit">Register</button>
+</form>
+
+
+<!--
+<h1>ngClass ngStyle</h1>
+<input type="text" required #nameInput3="ngModel" [(ngModel)]="person.name">
+<div class="products--grid">
+  <div>
+    <input type="number" [(ngModel)]="box.width">
+    <input type="number" [(ngModel)]="box.height">
+    <input type="color" [(ngModel)]="box.background">
+  </div>
+  <div>
+    <div [ngStyle]="{
+      'width.px': box.width,
+      'height.px': box.height,
+      'background-color': box.background,
+      'display': 'block'
+    }"></div>
+  </div>
+</div>
+<p class="message-error" [class.invalid]="nameInput3.invalid">The data typed is invalid</p>
+<hr class="line-error" [ngClass]="{
+  'valid': nameInput3.valid,
+  'invalid': nameInput3.invalid
+}"
+/>
+
+
+<h1>Dynamic classes</h1>
+<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name">
+<p class="message-error" [class.invalid]="nameInput.invalid">The data typed is invalid</p>
+
+<label>Nombre</label>
+<input type="text" required #nameInput2="ngModel" [(ngModel)]="person.name">
+<p [style.color]="nameInput2.invalid ? 'blue' : 'red'" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum reprehenderit vitae incidunt tenetur eius adipisci enim est hic exercitationem delectus distinctio quas, eaque, quos animi. Voluptatem quae ab provident! Cum.</p>
+<hr>
+
+<h1>Products</h1>
+<div class="products--grid">
+  <div *ngFor="let product of products; index as i">
+    <h3>{{ product.name }}</h3>
+    <img src="{{ product.img }}" alt="{{ product.name }} img">
+    <p>Price: {{ product.price }}</p>
+  </div>
+</div>
+
+<h1>ngSwitch</h1>
+  <div [ngSwitch]="person.name">
+    <p *ngSwitchCase="'Andrés'">
+      I'm Camilo and I'm 25.
+    </p>
+    <p *ngSwitchDefault>
+      Mucha re loca
+    </p>
+  </div>
+<hr>
+
+<h1>ngFor</h1>
+<img [src]="image" width="250" alt="kratos">
+<p>Below the list of names included in the array:</p>
+<ul>
+  <p *ngIf="nameList.length === 0">There is no item to display</p>
+  <li *ngFor="let name of nameList; index as i">
+    {{ i }}. {{ name }}
+    <button (click)="popName(i)">Delete</button>
+  </li>
+</ul>
+<p>
+  Type a new name:
+  <input type="text" [(ngModel)]="nameTyped">
+  <button (click)="pushName()">Add</button>
+</p>
+<hr/>
+
+<h1>NgModel with Age</h1>
+<h3>{{ person.age }}</h3>
+<input type="number" max=20 min=12 required #ageInput="ngModel" [(ngModel)]="person.age">
+<p>Is the age typed valid? {{ ageInput.valid }}</p>
+<hr/>
+
+<h1>ngIf</h1>
+<p *ngIf="person.age > 12; else elseBlock" >
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ipsum ipsam alias vero. Libero esse voluptas quia repudiandae explicabo atque commodi eligendi omnis rerum impedit cum, incidunt nemo dolor vel.
+</p>
+<ng-template #elseBlock>
+  <p>Salgo porque la persona es menor a 12 años, miren: {{ person.age }}</p>
+</ng-template>
+<hr/>
+
+<h1>NgModel</h1>
+<h3>{{ person.name }}</h3>
+<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name">
+<p>Valid: {{ nameInput.valid }}</p>
+<hr/>
+
+<h1>Properties</h1>
+<button [disabled]="btnDisable">Enter</button>
+<button (click)="toggleButton()">Enable button</button>
+<hr/>
+<div class="box" (scroll)="onScroll($event)">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora doloribus assumenda animi corporis temporibus cum, dolore dignissimos consequuntur consectetur odit eum soluta sit, debitis blanditiis tenetur itaque voluptatum quas libero? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam, facilis. Ut culpa, dolore deleniti similique ab ducimus temporibus, ullam nulla accusantium reiciendis iusto sint excepturi eos maxime vel fugiat corrupti. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, quis. Cupiditate aliquid non, praesentium sit sed soluta inventore delectus minima. Sint possimus labore neque vitae minus veritatis earum, numquam consequuntur.</p>
+</div>
+<input type="text" [value]="person.name" (keyup)="changeName($event)">
+<h3>{{ name }}</h3>
+<hr/>
+<input type="text" [value]="person.name">
+<progress max="100" [value]="person.age + 52"></progress>
+<hr/>
+<h1>Hey ! Greetings from the first page of this web app</h1>
+<h2>Let me introduce myself. I'm {{ name }} and I'm {{ age }}.</h2> -->
