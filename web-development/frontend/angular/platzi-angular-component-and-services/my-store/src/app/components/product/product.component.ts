@@ -7,11 +7,10 @@ import { IProduct } from 'src/app/models/product.model';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent {
-  @Input() products: IProduct[] = [{
+  @Input() product: IProduct ={
     id: "",
     name: "",
     price: 0,
     img: ""
-  },
-]
+  }
 }

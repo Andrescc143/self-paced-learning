@@ -1,4 +1,13 @@
+<img [src]="img" [alt]="imgAlt" (error)="imgError()" *ngIf="img; else imgElse">
+<ng-template #imgElse>
+  <img [src]="defaultImg" width="200" alt="defaultImg">
+</ng-template>
+
+
+<!--
+  <h3>Counter being increased: {{ counter }}</h3>
 <img [src]="img" (load)="imgLoaded()" (error)="imgError()" width="200px" alt="The last of Us" *ngIf="img; else imgElse">
 <ng-template #imgElse>
   <img [src]="defaultImg" width="200" alt="kratos">
 </ng-template>
+-->

@@ -1,5 +1,5 @@
-<div *ngFor="let product of products">
-  <img [src]="product.img" width="200" alt="kratos">
+<div>
+  <app-img [img]="product.img" [imgAlt]="product.name"></app-img>
   <h2>{{ product.name }}</h2>
   <p>{{ product.price }}</p>
 </div>
