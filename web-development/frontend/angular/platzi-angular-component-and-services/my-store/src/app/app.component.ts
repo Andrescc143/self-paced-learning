@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { PRODUCTS } from './mocks/product.mock';
+import { Component, OnInit } from '@angular/core';
 import { IProduct } from './models/product.model';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,18 @@ import { IProduct } from './models/product.model';
 })
 export class AppComponent {
 
-  products: IProduct[] = PRODUCTS;
+  products: IProduct[] = [];
+
+  constructor (
+    private productsService: ProductsService
+  ){}
+
+  ngOnInit(){
+    this.productsService.getAllProducts()
+    .subscribe(data => {
+      this.products = data;
+    });
+  }
 
 
   /*

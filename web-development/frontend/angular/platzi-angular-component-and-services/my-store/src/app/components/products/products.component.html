@@ -1,4 +1,7 @@
+<p>Date: {{ today | date: 'short' }}</p>
 <div class="products--grid">
-  <app-product [product]="product" *ngFor="let product of products"></app-product>
+  <p>Total products: {{shoppingCart.length}} Total cost: {{ totalShoppingCart }} </p>
+  <app-product [product]="product" *ngFor="let product of products"
+  (productAdded)="onAddedToCart($event)"></app-product>
 </div>
 

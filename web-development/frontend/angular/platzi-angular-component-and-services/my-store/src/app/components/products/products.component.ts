@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IProduct } from 'src/app/models/product.model';
+import { StoreService } from 'src/app/services/store.service';
 
 @Component({
   selector: 'app-products',
@@ -9,9 +10,26 @@ import { IProduct } from 'src/app/models/product.model';
 export class ProductsComponent {
   @Input() products: IProduct[] = [{
     id: "",
-    name: "",
+    title: "",
     price: 0,
-    img: ""
+    image: "",
+    description: "",
+    category: ""
   },
 ]
+  today = new Date();
+  date = new Date(2020, 2, 16);
+  totalShoppingCart: number = 0;
+  shoppingCart: IProduct[] = [];
+
+  constructor(
+    private storeService: StoreService
+  ){
+    this.shoppingCart = this.storeService.getShoppingCart();
+  };
+
+  onAddedToCart(product: IProduct): void {
+    this.storeService.addProduct(product);
+    this.totalShoppingCart = this.storeService.getTotal();
+  }
 }

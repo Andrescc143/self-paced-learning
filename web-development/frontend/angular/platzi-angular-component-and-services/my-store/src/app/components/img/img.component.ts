@@ -11,7 +11,7 @@ export class ImgComponent {
   @Input() img: string = "";
   @Input() imgAlt: string = "";
 
-  defaultImg: string = "./assets/default-img.png";
+  defaultImg: string = "./assets/default.png";
 
   imgError(){
     this.img = this.defaultImg;
