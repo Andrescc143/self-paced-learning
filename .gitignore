@@ -1,4 +1,4 @@
 00.*resources/
 venv/
 static/
-*node_modules/
+node_modules/
