@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        background-color: darkgrey;
+        font-family: 'Franklin Gothic Medium';
+        font-size: 4px;
+    }
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    section div {
+        width: 100px;
+    }
+
+    .image-container img{
+        width: 100px;
+        height: 40px;
+        border: 1px darkslategrey solid;
+    }
+
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .name p {
+        text-align: center;
+        margin: 0;
+    }
+
+    .profile-picture {
+        display: flex;
+        justify-content: center;
+    }
+    .profile-picture img {
+        margin: 2px;
+        height: 25px;
+    }
+    .list-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 2;
+    }
+
+    .item-list li {
+        display: flex;
+        flex-direction: row;
+        margin-left: 0px;
+    }
+    li img{
+        width: 10px;
+        height: 12px;
+        margin: 2px;
+
+    }
+    .description p {
+        margin: 2px;
+        text-align: justify;
+    }
+</style>
+<body>
+    <section>
+        <div class="image-container">
+            <img src="https://img.freepik.com/free-photo/dialogue-survivors-ruins-after-war-3d-illustration_456031-172.jpg?w=826" alt="deep-fighter">
+        </div>
+        <div class="profile-container">
+            <div class="profile-picture">
+                <img src="https://cdn-icons-png.flaticon.com/512/164/164600.png?w=740" alt="user-image">
+            </div>
+            <div class="name">
+                <p>Kratos Perséfone</p>
+            </div>
+            <div class="profile-highlights">
+                <div class="list-container">
+                    <div class="item-list">
+                        <li>
+                            <img class="icon" src="https://img.freepik.com/free-vector/illustration-computer-icon_53876-5559.jpg?w=740" alt="random-icon">
+                            <p>Software engineer</p>
+                        </li>
+                    </div>
+                    <div class="item-list">
+                        <li>
+                            <img class="icon" src="https://img.freepik.com/free-vector/illustration-computer-icon_53876-5559.jpg?w=740" alt="random-icon">
+                            <p>Python developer</p>
+                        </li>
+                    </div>
+                </div>
+            </div>
+            <div class="description">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi ab quas non, similique odit eos commodi asperiores sapiente, aut optio praesentium in natus omnis? Voluptates voluptate possimus dolor mollitia voluptatum!</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
