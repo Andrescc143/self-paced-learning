@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .descendents span{
+        color: red;
+    }
+
+    .direct-child > span{
+        color: blueviolet;
+    }
+
+    .adjacent + p{
+        color: brown;
+    }
+
+    .brothers ~ p{
+        color: violet
+    }
+</style>
+<body>
+    <h1>Test for selectors</h1>
+    <p>We have the below options:</p>
+    <ul>
+        <li>Descendents</li>
+        <p class="descendents">
+            <span>it shows all the child tags with the same style.</span><br>
+            <span>in addition it covers any nested child<br>
+                <span>I'm a child</span>
+            </span><br>
+            <span>third span</span>
+        </p>
+
+        <li>Direct child</li>
+        <p class="direct-child">
+            <span>it shows the styles only for the direct child and not the nested<br>
+                <p>I'm a nested child, i'm not covered</p>
+            </span>
+        </p>
+
+        <li>adjacent</li>
+        <p class="adjacent">
+            <p>It shows only the styles for the inmediately next tag</p>
+            <p>I'm not covered because I'm not next to the main one.</p>
+        </p>
+
+        <li>brothers</li>
+        <div class="brothers">
+            <p>I'm a child, I'm not covered</p>
+        </div>
+        <p>It shows the styles only for the first grade childs</p>
+        <p>I'm another brother</p>
+    </ul>
+</body>
+</html>
