@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        position: absolute;
+    }
+    .first {
+        background-color: antiquewhite;
+        width: 30px;
+        height: 30px;
+        z-index: 4;
+    }
+    .second {
+        background-color: aqua;
+        width: 18px;
+        height: 18px;
+        z-index: 5;
+    }
+    .inner {
+        background-color: blueviolet;
+        width: 25px;
+        height: 25px;
+        z-index: 7;
+    }
+</style>
+<body>
+    <div class="first">
+        <div class="inner"></div>
+    </div>
+    <div class="second"></div>
+</body>
+</html>
