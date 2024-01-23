@@ -11,7 +11,7 @@ public class RESTController {
     private final Coach coach;
 
     @Autowired
-    public RESTController(@Qualifier("runningCoach") Coach coach){
+    public RESTController(Coach coach){
         this.coach = coach;
     }
     @GetMapping("/")
