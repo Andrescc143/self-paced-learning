@@ -11,7 +11,8 @@ public class RESTController {
     private final Coach coach;
 
     @Autowired
-    public RESTController(Coach coach){
+    public RESTController(@Qualifier("runningCoach") Coach coach){
+        System.out.println("In constructor: " + getClass().getSimpleName());
         this.coach = coach;
     }
     @GetMapping("/")
