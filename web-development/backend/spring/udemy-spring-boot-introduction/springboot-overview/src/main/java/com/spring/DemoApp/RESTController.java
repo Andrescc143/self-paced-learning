@@ -8,12 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class RESTController {
-    private final Coach coach;
+    private final Coach runningCoach;
+    private final Coach swimCoach;
 
     @Autowired
-    public RESTController(@Qualifier("runningCoach") Coach coach){
-        System.out.println("In constructor: " + getClass().getSimpleName());
-        this.coach = coach;
+    public RESTController(@Qualifier("runningCoach") Coach runningCoach,
+                          @Qualifier("swimCoach") Coach swimCoach){
+        this.runningCoach = runningCoach;
+        this.swimCoach = swimCoach;
     }
     @GetMapping("/")
     public String index(){
@@ -24,7 +26,10 @@ public class RESTController {
     public String greeting(){ return "Greetings from Colombia!"; }
 
     @GetMapping("/dailyworkout")
-    public String dailyworkout(){
-        return "It Worked, check this: " + coach.getDailyWorkout();
+    public String dailyWorkout(){
+        return "It Worked, check this: " + runningCoach.getDailyWorkout();
     }
+
+    @GetMapping("/swim/dailyworkout")
+    public String swimDailyWorkout() { return "Bean configure with Java code: " + swimCoach.getDailyWorkout(); }
 }
