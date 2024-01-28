@@ -1,17 +1,23 @@
 package com.spring.DemoApp.Model;
 
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Primary;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.stereotype.Component;
 
 @Component
 public class RunningCoach implements Coach{
-    public RunningCoach (){
-        System.out.println("In constructor: " + getClass().getSimpleName());
-    }
     @Override
     public String getDailyWorkout() {
-        System.out.println("In constructor: " + getClass().getSimpleName());
         return "Run 5k right now!";
+    }
+
+    @PostConstruct
+    public void beanBuiltAlert() {
+        System.out.println("The bean " + getClass().getSimpleName() + " has been initialized.");
+    }
+
+    @PreDestroy
+    public void beanToBeDestroyAlert(){
+        System.out.println("The bean" + getClass().getSimpleName() + " will be destroy.");
     }
 }
